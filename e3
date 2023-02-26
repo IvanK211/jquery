@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>e3</title>
+    <style>
+      .green {
+        color: green;
+      }
+      .blue {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="message"></div>
+    <script>
+      const today = new Date();
+      const dayOfWeek = today.getDay(); //days of the week 0 to 6
+
+      if (dayOfWeek === 0) {
+        document.getElementById('message').textContent = 'It is Sunday!';
+        document.getElementById('message').classList.add('green');
+      } else {
+        document.getElementById('message').textContent = 'It is not Sunday.';
+        document.getElementById('message').classList.add('blue');
+      }
+    </script>
+  </body>
+<html/
