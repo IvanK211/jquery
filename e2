@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Table</title>
+    <style>
+      .highlighted {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Office</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John</td>
+          <td>Smith</td>
+          <td>jsmith@sar.com</td>
+          <td>+30 210 1234567</td>
+          <td>PN 514</td>
+        </tr>
+        <tr>
+          <td>Maria</td>
+          <td>Carras</td>
+          <td>mcarras@jsu.edu</td>
+          <td>+30 210 7654321</td>
+          <td>PM 413</td>
+        </tr>
+        <tr>
+          <td>Helen</td>
+          <td>Antypas</td>
+          <td>hanpas@bdg.com</td>
+          <td>+30 2310 654321</td>
+          <td>PK 614</td>
+        </tr>
+        <tr>
+          <td>Afroditi</td>
+          <td>Makri</td>
+          <td>amakr@hughes.edu</td>
+          <td>+30 2310 123456</td>
+          <td>PJ 717</td>
+        </tr>
+      </tbody>
+    </table>
+    <button id="next-button">Next</button>
+    <button id="clear-button">Clear</button>
+    <script>
+      const rows = document.querySelectorAll('tbody tr');
+      let highlightedRow = null;
+      function highlightNextRow() {
+        if (highlightedRow) {
+          highlightedRow.classList.remove('highlighted');
+        }
+        highlightedRow = (highlightedRow === rows[rows.length - 1]) ? rows[0] : rows[Array.from(rows).indexOf(highlightedRow) + 1];
+        highlightedRow.classList.add('highlighted');
+      }
+      function clearHighlightedRow() {
+        if (highlightedRow) {
+          highlightedRow.classList.remove('highlighted');
+          highlightedRow = null;
+        }
+      }
+      document.getElementById('next-button').addEventListener('click', highlightNextRow);
+      document.getElementById('clear-button').addEventListener('click', clearHighlightedRow);
+    </script>
+  </body>
+</html>
