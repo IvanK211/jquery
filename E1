@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello World! Colorful</title>
+    <style>
+      .color-cycle {
+        color: black;
+        animation: color-animation 2s linear infinite;
+      }
+
+
+      @keyframes color-animation {
+        33% {
+          color: blue;
+        }
+        66% {
+          color: green;
+        }
+        100% {
+          color: black;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="color-cycle">Hello World.</h1>
+  </body>
+</html>
